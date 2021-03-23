@@ -1,0 +1,39 @@
+<!-- Header -->
+<div id="header">
+
+  <!-- Inner -->
+    <div class="inner">
+      <header>
+        <h1><a href="{% url 'index'  %}" id="logo">Helios</a></h1>
+        <hr />
+        <p>Another fine freebie by HTML5 UP</p>
+      </header>
+      <footer>
+        <a href="#banner" class="button circled scrolly">Start</a>
+      </footer>
+    </div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="{% url 'index'  %}">Anasayfa</a></li>
+      <li><a href="{% url 'article:articles'  %}">Blog</a></li>
+      <li><a href="{% url 'about'  %}">İletişim</a></li>
+      {% if request.user.is_authenticated %}
+      <li><a href="{% url 'article:dashboard'  %}">Kontrol Paneli</a></li>
+      <li><a href="{% url 'user:logout'  %}">Çıkış Yap</a></li>
+      {% else %}
+      <li><a href="{% url 'user:login'  %}">Giriş Yap</a></li>
+      {% endif %}
+      <li><a href="{% url 'user:register'  %}">Kayıt Ol</a></li>
+    </ul>
+  </nav>
+
+</div>
+
+
+
+
+
+
+
